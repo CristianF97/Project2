@@ -19,5 +19,8 @@
   "homepage": "https://github.com/CristianF97/Project2#readme",
   "devDependencies": {
     "eslint": "^6.8.0"
+  },
+  "dependencies": {
+    "ejs": "^3.0.1"
   }
 }
