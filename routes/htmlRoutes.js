@@ -12,10 +12,18 @@ module.exports = function(app) {
   });
 
   // Load Dish page and pass in an Dish by id
-  app.get("/Dish/:id", function(req, res) {
+  app.get("/dish/:id", function(req, res) {
     db.Dish.findOne({ where: { id: req.params.id } }).then(function(dbDish) {
-      res.render("Dish", {
+      res.render("dish", {
         Dish: dbDish
+      });
+    });
+  });
+
+  app.get("/reservation", function(req, res) {
+    db.Reservation.findAll({}).then(function(dbReservations) {
+      res.render("reservation", {
+        Reservations: dbReservations
       });
     });
   });
