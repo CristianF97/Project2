@@ -1,0 +1,69 @@
+<div>
+    <div class="message">
+        <h2>Reservations</h2>
+        <p>For parties of six or more, we recommend making reservations at least two weeks in advance. For walk-ins, we only seat parties on a first come, first served basis.</p>
+    </div>
+
+
+
+    <div class="container">
+        <form>
+            <div class="form-row">
+                <div class="col-md-6 mb-2">
+                    <label for="validationServer01">First name</label>
+                    <input type="text" class="form-control is-valid area" id="firstName" value="" required>
+                </div>
+
+                <div class="col-md-6 mb-2">
+                    <label for="validationServer02">Last name</label>
+                    <input type="text" class="form-control is-valid area" id="lastName" value="" required>
+                </div>
+
+                <div class="col-md-12 mb-1">
+                    <label for="validationServer02">Phone Number</label>
+                    <input type="text" class="form-control is-valid area" id="phoneNumber" value="" required>
+                </div>
+
+                <dfirstNameiv class="col-md-12 mb-1">
+                    <label for="validationServer02">email</label>
+                    <input type="text" class="form-control is-valid area" id="email" value="" required>
+                </dfirstNameiv>
+
+                <dfirstNameiv class="col-md-12 mb-1">
+                    <label for="validationServer02">date</label>
+                    <input type="text" class="form-control is-valid area" id="date" value="" required>
+                </dfirstNameiv>
+
+                <dfirstNameiv class="col-md-12 mb-1">
+                    <label for="validationServer02">Number of Guests</label>
+                    <input type="text" class="form-control is-valid area" id="numberOfGuests" value="" required>
+                </dfirstNameiv> 
+
+                <div class="col-md-12 mb-1">
+                    <label for="validationServer02">Comment</label>
+                    <input type="text" class="form-control is-valid area" id="comment" value="">
+                </div>
+
+            </div>
+            <br>
+            <button id="submit" class="btn btn-primary float-left submitButton">Submit</button>
+        </form>
+    
+        <ul id="reservation-list" class="list-group">
+            {{!-- {{#each Reservation}} --}}
+                <li data-id="{{this.id}}" class="list-group-item">
+                    <p> <strong>First Name</strong>: {{this.firstName}}</p>>
+                    <p> <strong>Last Name</strong>: {{this.lastName}}</p>>
+                    <p> <strong>Phone Number</strong>: {{this.phoneNumber}}</p>>
+                    <p> <strong>Email</strong>: {{this.email}}</p>>
+                    <p> <strong>Date</strong>: {{this.date}}</p>>
+                    <p> <strong>Number of Guests</strong>: {{this.numberOfGuests}}</p>>
+                    <p> <strong>Comment</strong>: {{this.comment}}</p>>
+                    <a href="reservation/"></a>
+                </li>
+            {{!-- {{/each}} --}}
+        </ul>
+    </div>
+</div>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/reservation.js"></script>
