@@ -3,19 +3,27 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    db.Dish.findAll({}).then(function(dbDishes) {
       res.render("index", {
         msg: "Welcome!",
-        examples: dbExamples
+        Dishes: dbDishes
       });
     });
   });
 
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.render("example", {
-        example: dbExample
+  // Load Dish page and pass in an Dish by id
+  app.get("/dish/:id", function(req, res) {
+    db.Dish.findOne({ where: { id: req.params.id } }).then(function(dbDish) {
+      res.render("dish", {
+        Dish: dbDish
+      });
+    });
+  });
+
+  app.get("/reservation", function(req, res) {
+    db.Reservation.findAll({}).then(function(dbReservations) {
+      res.render("reservation", {
+        Reservations: dbReservations
       });
     });
   });

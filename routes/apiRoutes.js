@@ -1,24 +1,48 @@
 var db = require("../models");
-
+var randomize = require("randomatic");
 module.exports = function(app) {
-  // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
+  
+  // Get all dishes
+  app.get("/api/index", function(req, res) {
+    db.Dish.findAll({}).then(function(dbDishes) {
+      console.log(dbDishes);
+      res.json(dbDishes);
     });
   });
 
   // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
+  app.post("/api/dishes", function(req, res) {
+    db.Dish.create(req.body).then(function(dbDishes) {
+      
+      res.json(dbDishes);
     });
   });
 
-  // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.json(dbExample);
+  // Delete an Dish by id
+  app.delete("/api/dishes/:id", function(req, res) {
+    db.Dish.destroy({ where: { id: req.params.id } }).then(function(dbDishes) {
+      res.json(dbDishes);
+    });
+  });
+
+  app.get("/api/reservation", function(req, res) {
+    db.Reservation.findAll({}).then(function(dbReservations) {
+      res.json(dbReservations);
+    });
+  });
+
+  app.post("/api/reservation", function(req, res) {
+    db.Reservation.create({
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      phoneNumber: req.body.phoneNumber,
+      email: req.body.email,
+      date: req.body.date,
+      numberOfGuests: req.body.numberOfGuests,
+      comment: req.body.comment,
+    })
+      .then(function(dbReservations) {
+        res.json(randomize('0', 10));
     });
   });
 };
