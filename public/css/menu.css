@@ -1,0 +1,26 @@
+#container{
+    padding-top: 3%;
+}
+#menu{
+    padding-top: 2%;
+    padding-left: 5%;
+    padding-bottom: 4%;
+    margin-left: 20%;
+}
+.header{
+    text-align: center;
+}
+.name{
+    float: left;
+    width:20%;
+    text-align: left;
+}
+.price{
+    float: left;
+    width:15%;
+    text-align: left;
+}
+.description{
+    width:60%;
+    text-align: left;
+}

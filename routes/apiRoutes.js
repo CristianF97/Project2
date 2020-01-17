@@ -3,8 +3,9 @@ var randomize = require("randomatic");
 module.exports = function(app) {
   
   // Get all dishes
-  app.get("/api/dishes", function(req, res) {
+  app.get("/api/index", function(req, res) {
     db.Dish.findAll({}).then(function(dbDishes) {
+      console.log(dbDishes);
       res.json(dbDishes);
     });
   });
@@ -12,6 +13,7 @@ module.exports = function(app) {
   // Create a new example
   app.post("/api/dishes", function(req, res) {
     db.Dish.create(req.body).then(function(dbDishes) {
+      
       res.json(dbDishes);
     });
   });
