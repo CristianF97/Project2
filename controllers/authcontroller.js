@@ -4,8 +4,8 @@ exports.signup = function(req, res) {
     res.render('signup');
 };
 
-exports.order = function(req, res) {
-    res.render("order");
+exports.signin = function(req, res) {
+    res.render("signin");
 };
 
 exports.checkout = function(req, res) {

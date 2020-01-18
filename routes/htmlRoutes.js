@@ -11,9 +11,9 @@ module.exports = function(app) {
     });
   });
 
-  // app.get("/order", function(req, res) {
-  //   res.render("order");
-  // });
+  app.get("/order", function(req, res) {
+    res.render("order");
+  });
 
   // Load Dish page and pass in an Dish by id
   app.get("/dish/:id", function(req, res) {
