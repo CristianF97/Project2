@@ -1,7 +1,354 @@
-<h2>Place Your Order Here!</h2>
-
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   <link rel="stylesheet" href="../public/css/style.css">
+    <title></title>
+</head>
+ 
+<body>
 <div class="container">
-    <div>
-        
+    <div class="header">
+        <h2>Place Your Order Here!</h2>
     </div>
+    <div class="content">
+        <form>
+            <div class="row">
+                <div class= "input-field col s1">
+                    <h5>$7</h5>
+                </div>
+                <div class="input-field col s6">
+                    <h5>Clam Chowder</h5>
+                </div>
+                <div class="input-field col s1">
+                    <select id="clamChowder">
+                        <option value="" disabled selected>Qty</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div class="input-field col s2">
+                    <button class="btn" id="addChowder">Add</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class= "input-field col s1">
+                    <h5>$7</h5>
+                </div>
+                <div class="input-field col s6">
+                    <h5>Lobster Bisque</h5>
+                </div>
+                <div class="input-field col s1">
+                    <select id="lobsterBisque">
+                        <option value="" disabled selected>Qty</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div class="input-field col s2">
+                    <button class="btn" id="addBisque">Add</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class= "input-field col s1">
+                    <h5>$15</h5>
+                </div>
+                <div class="input-field col s6">
+                    <h5 >Wood Fired Oysters</h5>
+                </div>
+                <div class="input-field col s1">
+                    <select id="wfOysters">
+                        <option value="" disabled selected>Qty</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div class="input-field col s2">
+                    <button class="btn" id="addOysters">Add</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class= "input-field col s1">
+                    <h5>$11</h5>
+                </div>
+                <div class="input-field col s6">
+                    <h5>Pickled Pig's Feet</h5>
+                </div>
+                <div class="input-field col s1">
+                    <select id="ppFeet">
+                        <option value="" disabled selected>Qty</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div class="input-field col s2">
+                    <button class="btn" id="addFeet">Add</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class= "input-field col s1">
+                    <h5>$11</h5>
+                </div>
+                <div class="input-field col s6">
+                    <h5>Corned Beef Sandwich</h5>
+                </div>
+                <div class="input-field col s1">
+                    <select id="cbSandwich">
+                        <option value="" disabled selected>Qty</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div class="input-field col s2">
+                    <button class="btn" id="addCb">Add</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class= "input-field col s1">
+                    <h5>$13</h5>
+                </div>
+                <div class="input-field col s6">
+                    <h5>Brisket Sandwich</h5>
+                </div>
+                <div class="input-field col s1">
+                    <select id="brisketSandwich">
+                        <option value="" disabled selected>Qty</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div class="input-field col s2">
+                    <button class="btn" id="addBrisket">Add</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class= "input-field col s1">
+                    <h5>$11</h5>
+                </div>
+                <div class="input-field col s6">
+                    <h5>Bison Burger</h5>
+                </div>
+                <div class="input-field col s1">
+                    <select id="bisonBurger">
+                        <option value="" disabled selected>Qty</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div class="input-field col s2">
+                    <button class="btn" id="addBison">Add</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class= "input-field col s1">
+                    <h5>$13</h5>
+                </div>
+                <div class="input-field col s6">
+                    <h5>Venison Burger</h5>
+                </div>
+                <div class="input-field col s1">
+                    <select id="venisonBurger">
+                        <option value="" disabled selected>Qty</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div class="input-field col s2">
+                    <button class="btn" id="addVenison">Add</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class= "input-field col s1">
+                    <h5>$11</h5>
+                </div>
+                <div class="input-field col s6">
+                    <h5>Smoked Trout</h5>
+                </div>
+                <div class="input-field col s1">
+                    <select id="smokedTrout">
+                        <option value="" disabled selected>Qty</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div class="input-field col s2">
+                    <button class="btn" id="addTrout">Add</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class= "input-field col s1">
+                    <h5>$12</h5>
+                </div>
+                <div class="input-field col s6">
+                    <h5>Grilled Mackerel</h5>
+                </div>
+                <div class="input-field col s1">
+                    <select id="girlledMackerel">
+                        <option value="" disabled selected>Qty</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div class="input-field col s2">
+                    <button class="btn" id="addMackerel">Add</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class= "input-field col s1">
+                    <h5>$10</h5>
+                </div>
+                <div class="input-field col s6">
+                    <h5>Chicken Pot Pie</h5>
+                </div>
+                <div class="input-field col s1">
+                    <select id="cpPie">
+                        <option value="" disabled selected>Qty</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div class="input-field col s2">
+                    <button class="btn" id="addPie">Add</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class= "input-field col s1">
+                    <h5>$11</h5>
+                </div>
+                <div class="input-field col s6">
+                    <h5>Wild Turkey Club</h5>
+                </div>
+                <div class="input-field col s1">
+                    <select id="wtClub">
+                        <option value="" disabled selected>Qty</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div class="input-field col s2">
+                    <button class="btn" id="addClub">Add</button>
+                </div>
+                </div>
+            </form>   
+        </div> 
+        <div>
+            <h5 id="total">Total: $</h5 id="total">
+        </div>
 </div>
+</body>
+<script type="text/javascript">
+
+
+function calcTotal() {
+    var total = 0;
+
+    $("#total").text("Total: $ " + total);
+
+    $("#addChowder").on("click", function() {
+        event.preventDefault();
+        total += $("#clamChowder").val() * 7;
+        $("#total").text("Total: $ " + total);
+    });
+    $("#addBisque").on("click", function() {
+        event.preventDefault();
+        total += $("#lobsterBisque").val() * 7;
+        $("#total").text("Total: $ " + total);
+    });
+    $("#addOysters").on("click", function() {
+        event.preventDefault();
+        total += $("#wfOysters").val() * 15;
+        $("#total").text("Total: $ " + total);
+    });
+    $("#addFeet").on("click", function() {
+        event.preventDefault();
+        total += $("#ppFeet").val() * 11;
+        $("#total").text("Total: $ " + total);
+    });
+    $("#addCb").on("click", function() {
+        event.preventDefault();
+        total += $("#cbSandwich").val() * 11;
+        $("#total").text("Total: $ " + total);
+    });
+    $("#addBrisket").on("click", function() {
+        event.preventDefault();
+        total += $("#brisketSandwich").val() * 13;
+        $("#total").text("Total: $ " + total);
+    });
+    $("#addBison").on("click", function() {
+        event.preventDefault();
+        total += $("#bisonBurger").val() * 11;
+        $("#total").text("Total: $ " + total);
+    });
+    $("#addVenison").on("click", function() {
+        event.preventDefault();
+        total += $("#venisonBurger").val() * 13;
+        $("#total").text("Total: $ " + total);
+    });
+    $("#addTrout").on("click", function() {
+        event.preventDefault();
+        total += $("#smokedTrout").val() * 11;
+        $("#total").text("Total: $ " + total);
+    });
+    $("#addMackerel").on("click", function() {
+        event.preventDefault();
+        total += $("#girlledMackerel").val() * 12;
+        $("#total").text("Total: $ " + total);
+    });
+    $("#addPie").on("click", function() {
+        event.preventDefault();
+        total += $("#cpPie").val() * 10;
+        $("#total").text("Total: $ " + total);
+    });
+    $("#addClub").on("click", function() {
+        event.preventDefault();
+        total += $("#wtClub").val() * 11;
+        $("#total").text("Total: $ " + total);
+    });
+};
+calcTotal();
+
+$(document).ready(function(){
+    $('select').formSelect();
+});
+</script>
+</html>

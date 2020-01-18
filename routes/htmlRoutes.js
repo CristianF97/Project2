@@ -11,6 +11,10 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/order", function(req, res) {
+    res.render("order");
+  });
+
   // Load Dish page and pass in an Dish by id
   app.get("/dish/:id", function(req, res) {
     db.Dish.findOne({ where: { id: req.params.id } }).then(function(dbDish) {
