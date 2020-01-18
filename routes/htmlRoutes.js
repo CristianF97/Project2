@@ -3,19 +3,20 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Dish.findAll({}).then(function(dbDishes) {
+    db.ExamplefindAll({}).then(function(data) {
       res.render("index", {
         msg: "Welcome!",
-        Dishes: dbDishes
+        Examples: data
       });
     });
   });
 
   // Load Dish page and pass in an Dish by id
-  app.get("/dish/:id", function(req, res) {
-    db.Dish.findOne({ where: { id: req.params.id } }).then(function(dbDish) {
-      res.render("dish", {
-        Dish: dbDish
+  app.get("/menu", function(req, res) {
+    db.Dish.findAll({}, { raw: true }).then(function(dbDishes) {
+      console.log(dbDishes);
+      res.render("menu", {
+        dishes: dbDishes
       });
     });
   });
