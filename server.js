@@ -1,8 +1,8 @@
 require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
-var passport   = require("passport");
-var session    = require("express-session");
+var passport = require("passport");
+var session = require("express-session");
 var bodyParser = require("body-parser");
 
 var db = require("./models");
@@ -34,19 +34,19 @@ app.set("view engine", "handlebars");
 var dishes = [
   {
     name: "Clam Chowder",
-    price: "MP",
+    price: 7,
     description:
       "Texas quahog clams in a clear broth with parsnips, salsify, carrots, celery, and potatoes. Served in a sourdough bread bowl."
   },
   {
     name: "Lobster Bisque",
-    price: "MP",
+    price: 7,
     description:
       "Corpus Christi lobster, onions, carrots, and celery in a saffron and cream bisque. Served in a sourdough bread bowl."
   },
   {
     name: "Wood Fired Oysters",
-    price: "MP",
+    price: 15,
     description:
       "Half dozen oysters roasted over an open wood fire. Served with cumin-chipotle sauce."
   },
