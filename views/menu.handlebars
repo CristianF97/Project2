@@ -34,15 +34,15 @@
   <h3>Served daily from 7 am – 11 pm.</h3>
 </div>
 <hr>
-{{#each menu}}
-<div id="menu">
-  <p class="name">{{name}}</p>
-  <p class="price"> ${{price}}</p>
+{{#each dishes}}
+  <div id="menu">
+    <p class="name">{{dataValues.name}}</p>
+    <p class="price"> ${{dataValues.price}}</p>
+    <br>
+    <br>
+    <p class="description">{{dataValues.description}}</p>
+  </div>
   <br>
-  <br>
-  <p class="description">{{description}}</p>
-</div>
-<br>
   
 {{/each}}
 </div>
