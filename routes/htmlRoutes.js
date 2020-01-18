@@ -3,10 +3,10 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.ExamplefindAll({}).then(function(data) {
+    db.Dish.findAll({}).then(function(dbDishes) {
       res.render("index", {
         msg: "Welcome!",
-        Examples: data
+        Dishes: dbDishes
       });
     });
   });
@@ -16,11 +16,10 @@ module.exports = function(app) {
   });
 
   // Load Dish page and pass in an Dish by id
-  app.get("/menu", function(req, res) {
-    db.Dish.findAll({}, { raw: true }).then(function(dbDishes) {
-      console.log(dbDishes);
-      res.render("menu", {
-        dishes: dbDishes
+  app.get("/dish/:id", function(req, res) {
+    db.Dish.findOne({ where: { id: req.params.id } }).then(function(dbDish) {
+      res.render("dish", {
+        Dish: dbDish
       });
     });
   });
