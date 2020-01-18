@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Slickvic!90",
+    "password": "admin",
     "database": "restaurantdb",
     "host": "localhost",
     "dialect": "mysql"
