@@ -20,17 +20,22 @@
 </head>
 <body> --}}
   <ul id="dropdown1" class="dropdown-content">
-    <li><a class="black-text" href="#!">Menu</a></li>
+    <li><a class="black-text" href="/">Home</a></li>
+    <li><a class="black-text" href="/menu">Menu</a></li>
     <li><a class="black-text" href="/reservation">Reservation</a></li>
-    <li><a class="black-text" href="#!">Take Out</a></li>
+    <li><a class="black-text" href="/order">Take Out</a></li>
   </ul>
   <div class="navbar-fixed">
   <nav class="black" role="navigation">
     <a href="#" data-target="nav-mobile" class="sidenav-trigger white-text"><i class="material-icons">menu</i></a>
     <div class="nav-wrapper container">
       <div class="nav-wrapper">
+
         <a  href="#modal1" class="brand-logo modal-trigger">Sign In <i class="fas fa-user"></i></a>
-        
+
+        <a  href="#!" class="brand-logo"><i class="fas fa-user"></i></a>
+        <a href="/" class="brand-logo center">[HungARRAY]</a>
+
         <ul class="right hide-on-med-and-down">
           
           <!-- Dropdown Trigger -->
@@ -40,9 +45,10 @@
     </div>      
 
       <ul id="nav-mobile" class="sidenav">
-        <li><a class="black-text" href="#!">Menu</a></li>
+        <li><a class="black-text" href="/">Home</a></li>
+        <li><a class="black-text" href="/menu">Menu</a></li>
         <li><a class="black-text" href="/reservation">Reservation</a></li>
-        <li><a class="black-text" href="#!">Take Out</a></li>
+        <li><a class="black-text" href="/order">Take Out</a></li>
       </ul>
     </div>
   </nav>
@@ -75,7 +81,7 @@
           </div>
         <div class="col s12 m4">
           <div class="icon-block">
-            <a href="#" target="_blank">
+            <a href="/menu">
             <!-- <h2 class="center brown-text"><i class=" fas fa-beer"></i></h2> -->
             <h5 class="center black-text">View Menu</h5>
             </a>
@@ -95,7 +101,7 @@
 
         <div class="col s12 m4">
           <div class="icon-block">
-              <a href="#" target="_blank">
+              <a href="/order">
             <!-- <h2 class="center brown-text"><i class="fas fa-spinner"></i></h2> -->
             <h5 class="center black-text">Take Out</h5>
               </a>
@@ -125,11 +131,7 @@
 
       <div class="row">
         <div class="col s12 center">
-          <!-- <h3><i class="mdi-content-send brown-text"></i></h3> -->
-          <h4>About Us</h4>
-          <p class="left-align light">blah blah blah.</p>
-          <p class="left-align light">blah blah blah.</p>
-          <p class="left-align light">blah blah blah.</p>
+         <div style="width: 640px; height: 480px" id="map"></div>
         </div>
       </div>
 
@@ -140,9 +142,7 @@
   <div class="parallax-container valign-wrapper">
     <div class="section no-pad-bot">
       <div class="container">
-        <div class="row center">
-          <h5 class="header col s12 light">Feel free to reach us</h5>
-        </div>
+        
       </div>
     </div>
     <div class="parallax"><img src="images/background3.jpg" alt="Unsplashed background img 3"></div>
