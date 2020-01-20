@@ -4,6 +4,7 @@ var exphbs = require("express-handlebars");
 var passport = require("passport");
 var session = require("express-session");
 var bodyParser = require("body-parser");
+var flash = require("connect-flash");
 
 var db = require("./models");
 
@@ -18,6 +19,13 @@ app.use(express.static("public"));
 app.use(session({ secret: "thisisasecretshh",resave:true, saveUninitialized:true}));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
+app.use(function (req, res, next) {
+  res.locals.success_msg = req.flash('success_msg');
+  res.locals.errorEmail = req.flash('errorEmail');
+  res.locals.errorPassword = req.flash("errorPassword");
+  next();
+});
 
 var authRoute = require("./routes/auth.js")(app, passport);
 require("./config/passport/passport.js")(passport, db.user);
@@ -131,9 +139,7 @@ if (process.env.NODE_ENV === "test") {
 }
 
 app.get("/", function(req, res) {
- 
   res.render("index");
-
 });
 
 // Starting the server, syncing our models ------------------------------------/

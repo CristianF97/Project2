@@ -59,3 +59,9 @@
 #clamChowder {
   width: 20%;
 }
+
+#errorPassword {
+  text-align: center;
+  color: red;
+  background-color: black;
+}

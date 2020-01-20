@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html>
- 
-<head>
-    <title></title>
-</head>
- 
-<body>
+    {{#if emailInuse}}
+        <div id="emailInuse">{{emailInuse}}</div>
+    {{/if}} 
     <form id="signup" name="signup" method="post" action="/signup">
         <label for="email">Email Address</label>
         <input class="text" name="email" type="email" />
@@ -16,8 +11,3 @@
         <label for="password">Password</label>
         <input name="password" type="password" />
         <input class="btn" type="submit" value="Sign Up" />
-    </form>
- 
-</body>
- 
-</html>
