@@ -28,6 +28,16 @@
    .parallax-container .section {
      width: 100%;
    }
+
+   #map {
+    width: 480px;
+    height: 360px;
+   }
+
+   #outsideImg {
+     width: 480px;
+     height: 360px;
+   }
  
  @media only screen and (max-width : 992px) {
    .parallax-container .section {
@@ -43,6 +53,14 @@
    #index-banner .section {
      top: 0;
    }
+   #outsideImg{
+     width: 260px;
+     height: 200px;
+   }
+   #map{
+    width: 260px;
+    height: 200px;
+  }
  }
  
  .icon-block {
