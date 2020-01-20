@@ -6,14 +6,14 @@ body{
 .list-group-item {
   line-height: 2.5;
 }
-.message{
+.reservation-message{
   float: left;
   width: 30%;
   margin-left: 60px;
   margin-top: 60px;
 
 }
-.container{
+.reservation-container{
   float: left;
   width: 40%;
   margin-top: 60px;

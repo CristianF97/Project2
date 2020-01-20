@@ -14,9 +14,12 @@ var PORT = process.env.PORT || 3000;
 // Middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(bodyParser());
 app.use(express.static("public"));
 
-app.use(session({ secret: "thisisasecretshh",resave:true, saveUninitialized:true}));
+app.use(
+  session({ secret: "thisisasecretshh", resave: true, saveUninitialized: true })
+);
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
@@ -27,7 +30,7 @@ app.use(function (req, res, next) {
   next();
 });
 
-var authRoute = require("./routes/auth.js")(app, passport);
+// var authRoute = require("./routes/auth.js")(app, passport);
 require("./config/passport/passport.js")(passport, db.user);
 
 // Handlebars
@@ -39,22 +42,23 @@ app.engine(
   })
 );
 app.set("view engine", "handlebars");
+
 var dishes = [
   {
     name: "Clam Chowder",
-    price: 7,
+    price: 20,
     description:
       "Texas quahog clams in a clear broth with parsnips, salsify, carrots, celery, and potatoes. Served in a sourdough bread bowl."
   },
   {
     name: "Lobster Bisque",
-    price: 7,
+    price: 22,
     description:
       "Corpus Christi lobster, onions, carrots, and celery in a saffron and cream bisque. Served in a sourdough bread bowl."
   },
   {
     name: "Wood Fired Oysters",
-    price: 15,
+    price: 11,
     description:
       "Half dozen oysters roasted over an open wood fire. Served with cumin-chipotle sauce."
   },
@@ -114,17 +118,17 @@ var dishes = [
   }
 ];
 
-app.get("/menu/:name", function(req, res) {
-  for (var i = 0; i < dishes.length; i++) {
-    if (dishes[i].name === req.params.name) {
-      return res.render("menu", dishes[i]);
-    }
-  }
-});
+// app.get("/menu/:name", function(req, res) {
+//   for (var i = 0; i < dishes.length; i++) {
+//     if (dishes[i].name === req.params.name) {
+//       return res.render("menu", dishes[i]);
+//     }
+//   }
+// });
 
-app.get("/menu", function(req, res) {
-  res.render("menu", { menu: dishes });
-});
+// app.get("/menu", function(req, res) {
+//   res.render("menu", { menu: menu });
+// });
 
 // Routes
 require("./routes/apiRoutes")(app);
@@ -144,6 +148,13 @@ app.get("/", function(req, res) {
 
 // Starting the server, syncing our models ------------------------------------/
 db.sequelize.sync(syncOptions).then(function() {
+  db.Dish.destroy({
+    where: {},
+    truncate: true
+  });
+  dishes.forEach(function(dish) {
+    db.Dish.create(dish);
+  });
   app.listen(PORT, function() {
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
