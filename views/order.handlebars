@@ -6,7 +6,7 @@
    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-   <link rel="stylesheet" href="../public/css/style.css">
+   
     <title></title>
 </head>
  
@@ -47,16 +47,20 @@
     <div class="header">
         <h2>Place Your Order Here!</h2>
     </div>
-    <div class="content">
-        <form>
-            <div class="row">
-                <div class= "input-field col s1">
-                    <h5>$7</h5>
-                </div>
-                <div class="input-field col s6">
-                    <h5>Clam Chowder</h5>
-                </div>
-                <div class="input-field col s1">
+    <table class="highlight centered">
+        <thead>
+          <tr>
+              <th>Price</th>
+              <th>Dish</th>
+              <th>Quantity</th>
+              <th>Add to Cart</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class= "input-field col s1">$7</td>
+                <td class="input-field col s8">Clam Chowder</td>
+                <td class="input-field col s2" width="50">
                     <select id="clamChowder">
                         <option value="" disabled selected>Qty</option>
                         <option value="1">1</option>
@@ -65,19 +69,14 @@
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select>
-                </div>
-                <div class="input-field col s2">
+                </td class="input-field col s2">
+                <td>
                     <button class="btn" id="addChowder">Add</button>
-                </div>
-            </div>
-            <div class="row">
-                <div class= "input-field col s1">
-                    <h5>$7</h5>
-                </div>
-                <div class="input-field col s6">
-                    <h5>Lobster Bisque</h5>
-                </div>
-                <div class="input-field col s1">
+                </td>
+            </tr><tr>
+                <td class= "input-field col s1">$7</td>
+                <td class="input-field col s8">Lobster Bisque</td>
+                <td class="input-field col s2" width="50">
                     <select id="lobsterBisque">
                         <option value="" disabled selected>Qty</option>
                         <option value="1">1</option>
@@ -86,19 +85,15 @@
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select>
-                </div>
-                <div class="input-field col s2">
+                </td class="input-field col s2">
+                <td>
                     <button class="btn" id="addBisque">Add</button>
-                </div>
-            </div>
-            <div class="row">
-                <div class= "input-field col s1">
-                    <h5>$15</h5>
-                </div>
-                <div class="input-field col s6">
-                    <h5 >Wood Fired Oysters</h5>
-                </div>
-                <div class="input-field col s1">
+                </td>
+            </tr>
+            <tr>
+                <td class= "input-field col s1">$15</td>
+                <td class="input-field col s8">Wood Fired Oysters</td>
+                <td class="input-field col s2" width="50">
                     <select id="wfOysters">
                         <option value="" disabled selected>Qty</option>
                         <option value="1">1</option>
@@ -107,19 +102,15 @@
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select>
-                </div>
-                <div class="input-field col s2">
+                </td class="input-field col s2">
+                <td>
                     <button class="btn" id="addOysters">Add</button>
-                </div>
-            </div>
-            <div class="row">
-                <div class= "input-field col s1">
-                    <h5>$11</h5>
-                </div>
-                <div class="input-field col s6">
-                    <h5>Pickled Pig's Feet</h5>
-                </div>
-                <div class="input-field col s1">
+                </td>
+            </tr>
+            <tr>
+                <td class= "input-field col s1">$11</td>
+                <td class="input-field col s8">Pickled Pigs Feet</td>
+                <td class="input-field col s2" width="50">
                     <select id="ppFeet">
                         <option value="" disabled selected>Qty</option>
                         <option value="1">1</option>
@@ -128,19 +119,15 @@
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select>
-                </div>
-                <div class="input-field col s2">
+                </td class="input-field col s2">
+                <td>
                     <button class="btn" id="addFeet">Add</button>
-                </div>
-            </div>
-            <div class="row">
-                <div class= "input-field col s1">
-                    <h5>$11</h5>
-                </div>
-                <div class="input-field col s6">
-                    <h5>Corned Beef Sandwich</h5>
-                </div>
-                <div class="input-field col s1">
+                </td>
+            </tr>
+            <tr>
+                <td class= "input-field col s1">$11</td>
+                <td class="input-field col s8">Corned Beef Sandwich</td>
+                <td class="input-field col s2" width="50">
                     <select id="cbSandwich">
                         <option value="" disabled selected>Qty</option>
                         <option value="1">1</option>
@@ -149,19 +136,15 @@
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select>
-                </div>
-                <div class="input-field col s2">
+                </td class="input-field col s2">
+                <td>
                     <button class="btn" id="addCb">Add</button>
-                </div>
-            </div>
-            <div class="row">
-                <div class= "input-field col s1">
-                    <h5>$13</h5>
-                </div>
-                <div class="input-field col s6">
-                    <h5>Brisket Sandwich</h5>
-                </div>
-                <div class="input-field col s1">
+                </td>
+            </tr>
+            <tr>
+                <td class= "input-field col s1">$13</td>
+                <td class="input-field col s8">Brisket Sandwich</td>
+                <td class="input-field col s2" width="50">
                     <select id="brisketSandwich">
                         <option value="" disabled selected>Qty</option>
                         <option value="1">1</option>
@@ -170,19 +153,15 @@
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select>
-                </div>
-                <div class="input-field col s2">
+                </td class="input-field col s2">
+                <td>
                     <button class="btn" id="addBrisket">Add</button>
-                </div>
-            </div>
-            <div class="row">
-                <div class= "input-field col s1">
-                    <h5>$11</h5>
-                </div>
-                <div class="input-field col s6">
-                    <h5>Bison Burger</h5>
-                </div>
-                <div class="input-field col s1">
+                </td>
+            </tr>
+            <tr>
+                <td class= "input-field col s1">$11</td>
+                <td class="input-field col s8">Bison Burger</td>
+                <td class="input-field col s2" width="50">
                     <select id="bisonBurger">
                         <option value="" disabled selected>Qty</option>
                         <option value="1">1</option>
@@ -191,19 +170,15 @@
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select>
-                </div>
-                <div class="input-field col s2">
+                </td class="input-field col s2">
+                <td>
                     <button class="btn" id="addBison">Add</button>
-                </div>
-            </div>
-            <div class="row">
-                <div class= "input-field col s1">
-                    <h5>$13</h5>
-                </div>
-                <div class="input-field col s6">
-                    <h5>Venison Burger</h5>
-                </div>
-                <div class="input-field col s1">
+                </td>
+            </tr>
+            <tr>
+                <td class= "input-field col s1">$13</td>
+                <td class="input-field col s8">Venison Burger</td>
+                <td class="input-field col s2" width="50">
                     <select id="venisonBurger">
                         <option value="" disabled selected>Qty</option>
                         <option value="1">1</option>
@@ -212,19 +187,15 @@
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select>
-                </div>
-                <div class="input-field col s2">
+                </td class="input-field col s2">
+                <td>
                     <button class="btn" id="addVenison">Add</button>
-                </div>
-            </div>
-            <div class="row">
-                <div class= "input-field col s1">
-                    <h5>$11</h5>
-                </div>
-                <div class="input-field col s6">
-                    <h5>Smoked Trout</h5>
-                </div>
-                <div class="input-field col s1">
+                </td>
+            </tr>
+            <tr>
+                <td class= "input-field col s1">$11</td>
+                <td class="input-field col s8">Smoked Trout</td>
+                <td class="input-field col s2" width="50">
                     <select id="smokedTrout">
                         <option value="" disabled selected>Qty</option>
                         <option value="1">1</option>
@@ -233,20 +204,16 @@
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select>
-                </div>
-                <div class="input-field col s2">
+                </td class="input-field col s2">
+                <td>
                     <button class="btn" id="addTrout">Add</button>
-                </div>
-            </div>
-            <div class="row">
-                <div class= "input-field col s1">
-                    <h5>$12</h5>
-                </div>
-                <div class="input-field col s6">
-                    <h5>Grilled Mackerel</h5>
-                </div>
-                <div class="input-field col s1">
-                    <select id="girlledMackerel">
+                </td>
+            </tr>
+            <tr>
+                <td class= "input-field col s1">$12</td>
+                <td class="input-field col s8">Grilled Mackerel</td>
+                <td class="input-field col s2" width="50">
+                    <select id="grilledMackerel">
                         <option value="" disabled selected>Qty</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -254,19 +221,15 @@
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select>
-                </div>
-                <div class="input-field col s2">
+                </td class="input-field col s2">
+                <td>
                     <button class="btn" id="addMackerel">Add</button>
-                </div>
-            </div>
-            <div class="row">
-                <div class= "input-field col s1">
-                    <h5>$10</h5>
-                </div>
-                <div class="input-field col s6">
-                    <h5>Chicken Pot Pie</h5>
-                </div>
-                <div class="input-field col s1">
+                </td>
+            </tr>
+            <tr>
+                <td class= "input-field col s1">$10</td>
+                <td class="input-field col s8">Chicken Pot Pie</td>
+                <td class="input-field col s2" width="50">
                     <select id="cpPie">
                         <option value="" disabled selected>Qty</option>
                         <option value="1">1</option>
@@ -275,19 +238,15 @@
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select>
-                </div>
-                <div class="input-field col s2">
+                </td class="input-field col s2">
+                <td>
                     <button class="btn" id="addPie">Add</button>
-                </div>
-            </div>
-            <div class="row">
-                <div class= "input-field col s1">
-                    <h5>$11</h5>
-                </div>
-                <div class="input-field col s6">
-                    <h5>Wild Turkey Club</h5>
-                </div>
-                <div class="input-field col s1">
+                </td>
+            </tr>
+            <tr>
+                <td class= "input-field col s1">$11</td>
+                <td class="input-field col s8">Wild Turkey Club</td>
+                <td class="input-field col s2" width="50">
                     <select id="wtClub">
                         <option value="" disabled selected>Qty</option>
                         <option value="1">1</option>
@@ -296,15 +255,15 @@
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select>
-                </div>
-                <div class="input-field col s2">
+                </td class="input-field col s2">
+                <td>
                     <button class="btn" id="addClub">Add</button>
-                </div>
-                </div>
-            </form>   
-        </div> 
+                </td>
+            </tr>
+        </tbody>
+        </table>
         <div>
-            <h5 id="total">Total: $</h5 id="total">
+            <h5 id="total">Total: $</h5>
         </div>
 </div>
 </body>
@@ -363,7 +322,7 @@ function calcTotal() {
     });
     $("#addMackerel").on("click", function() {
         event.preventDefault();
-        total += $("#girlledMackerel").val() * 12;
+        total += $("#grilledMackerel").val() * 12;
         $("#total").text("Total: $ " + total);
     });
     $("#addPie").on("click", function() {

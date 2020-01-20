@@ -20,8 +20,7 @@ module.exports = function(passport, user) {
                 }
             }).then(function(user) {
                 if (user) {
-                    return done(null, false, {
-                        message: "That email is already in use" });
+                    return done(null, false, req.flash("emailInuse", "That email is already in use"));
                     } else {
                         var userPassword = generateHash(password);
                         
@@ -34,7 +33,7 @@ module.exports = function(passport, user) {
                         };
                         User.create(data).then(function(newUser, created) {
                             if (!newUser) {
-                                return done(null, false);
+                                return done(null, falsereq.flash("emailInuse", "That email is already in use"));
                             }
                             if (newUser) {
                                 return done(null, newUser);
@@ -74,19 +73,16 @@ module.exports = function(passport, user) {
                     }
                 }).then(function(user) {
                     if (!user) {
-                        return done(null, false, {
-                            message: "Email does not exist" });
+                        return done(null, false, req.flash("errorEmail", "Email does not exist"));
                         }
                     if (!isValidPassword(user.password, password)) {
-                        return done(null, false, {
-                            message: "Incorrect password." });
+                        return done(null, false, req.flash("errorPassword", "Incorrect password"));
                         }
                         var userinfo = user.get();
                         return done(null, userinfo);
                     }).catch(function(err) {
                         console.log(err);
-                        return done(null, false, {
-                            message: "Error logging in" });
+                        return done(null, false, req.flash("errorUnknown", "Error logging in"));
                         });
                     }
                 ));

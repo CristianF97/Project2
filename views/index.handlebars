@@ -1,24 +1,12 @@
-{{!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>HungARRAY</title>
-
-  <link href="https://fonts.googleapis.com/css?family=Varela&display=swap" rel="stylesheet">
-
-  <script src="https://kit.fontawesome.com/61b34eadf4.js" crossorigin="anonymous"></script>
-
-
-  <!-- CSS  -->
-  <link rel="stylesheet" type="text/css" href="../../public/styles/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../../public/styles/styles.css">
-    
-  
-</head>
-<body> --}}
+  {{#if errorPassword}}
+    <div id="errorPassword">{{errorPassword}}</div>
+  {{/if}}
+  {{#if errorEmail}}
+    <div id="errorEmail">{{errorEmail}}</div>
+  {{/if}}
+  {{#if errorUnknown}}
+    <div id="errorUnknown">{{errorUnknown}}</div>
+  {{/if}}
   <ul id="dropdown1" class="dropdown-content">
     <li><a class="black-text" href="/">Home</a></li>
     <li><a class="black-text" href="/menu">Menu</a></li>
@@ -30,7 +18,8 @@
     <a href="#" data-target="nav-mobile" class="sidenav-trigger white-text"><i class="material-icons">menu</i></a>
     <div class="nav-wrapper container">
       <div class="nav-wrapper">
-        <a  href="#!" class="brand-logo"><i class="fas fa-user"></i></a>
+        
+        <a  href="#modal1" class="brand-logo modal-trigger">Sign In <i class="fas fa-user"></i></a>
         <a href="/" class="brand-logo center">[HungARRAY]</a>
         <ul class="right hide-on-med-and-down">
           
@@ -174,14 +163,33 @@
       </div>
     </div>
     
+    <div class="modal-content">
+        <div id="modal1" class="modal">
+            <div class="container">
+            <h4 class="black-text">Sign In</h4>
+                <form id="signin" name="signin" method="post" action="/signin">
+                <div class="col 6">
+                    <div class="input-field col s12">
+                        <label for="email">Email Address</label>
+                        <input class="text" name="email" type="text" />
+                            <div class="input-field col s12">
+                                <label for="password">Password</label>
+                                <input name="password" type="password" />
+                            </div>
+                    <a href="signup">Register</a>
+                    </div>
+                        <input class="btn waves-effect waves-light" type="submit" value="Sign In"/>
+                </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+            </div>
+        </div> 
   </footer>
 
-
-  {{!-- <!-- Compiled and minified JavaScript -->
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script src="../../public/js/index.js"></script>
-<!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
-
-  </body>
-</html> --}}
+<script>        
+  $(document).ready(function(){
+    $('.modal').modal();
+  });
+</script>
