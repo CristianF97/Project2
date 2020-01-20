@@ -8,12 +8,12 @@ exports.signin = function(req, res) {
     res.render("signin");
 };
 
-exports.checkout = function(req, res) {
-    res.render("checkout");
+exports.order = function(req, res) {
+    res.render("order");
 };
 
 exports.logout = function(req, res) {
     req.session.destroy(function(err) {
-        res.redirect("index");
+        res.redirect("/");
     });
 };
