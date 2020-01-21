@@ -83,18 +83,23 @@ var handleFormSubmit = function(event) {
     date: $date.val().trim(),
     numberOfGuests: $numberOfGuests.val().trim(),
     comment: $comment.val().trim()
-
   };
 
-  if (!(reservation.firstName && reservation.lastName && reservation.email && reservation.date && reservation.numberOfGuests)) {
-    alert("You must enter the info required");
+  if (
+    !(
+      reservation.firstName &&
+      reservation.lastName &&
+      reservation.email &&
+      reservation.date &&
+      reservation.numberOfGuests
+    )
+  ) {
+    swal("Oops!", "You must enter the info required");
     return;
   }
 
   API.saveReservation(reservation).then(function(data) {
-    console.log(data);
-    alert(`Thank you! your reservation number is ${data}`);
-    // refreshReservation();
+    swal("Thank you! your reservation number is " + data);
   });
 
   $firstName.val("");

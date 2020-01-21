@@ -9,18 +9,25 @@
 }
 .header{
     text-align: center;
+    margin-right: 80px;
 }
 .name{
     float: left;
     width:20%;
     text-align: left;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 20px;
 }
 .price{
     float: left;
     width:15%;
     text-align: left;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 20px;
 }
 .description{
-    width:60%;
+    width:50%;
     text-align: left;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 20px;
 }
