@@ -1,7 +1,7 @@
 var exports = module.exports = {}
 
 exports.signup = function(req, res) {
-    res.render('signup');
+    res.render("signup");
 };
 
 exports.signin = function(req, res) {
@@ -14,6 +14,7 @@ exports.order = function(req, res) {
 
 exports.logout = function(req, res) {
     req.session.destroy(function(err) {
+        req.logout();
         res.redirect("/");
     });
 };

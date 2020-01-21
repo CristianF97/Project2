@@ -30,7 +30,7 @@ app.use(function (req, res, next) {
   next();
 });
 
-// var authRoute = require("./routes/auth.js")(app, passport);
+var authRoute = require("./routes/auth.js")(app, passport);
 require("./config/passport/passport.js")(passport, db.user);
 
 // Handlebars

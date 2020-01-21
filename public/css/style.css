@@ -82,4 +82,26 @@
   text-align: center;
   color: red;
   background-color: black;
+  font-size: large;}
+
+#errorEmail {
+  text-align: center;
+  color: red;
+  background-color: black;
+  font-size: large;
+}
+
+#errorUnknown {
+  text-align: center;
+  color: red;
+  background-color: black;
+  font-size: large;
+}
+
+#checkout {
+  margin: 20px 0 20px;
+}
+
+#signup {
+  margin-top: 10%;
 }
