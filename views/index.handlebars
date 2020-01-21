@@ -1,13 +1,4 @@
-  {{#if errorPassword}}
-    <div id="errorPassword">{{errorPassword}}</div>
-  {{/if}}
-  {{#if errorEmail}}
-    <div id="errorEmail">{{errorEmail}}</div>
-  {{/if}}
-  {{#if errorUnknown}}
-    <div id="errorUnknown">{{errorUnknown}}</div>
-  {{/if}}
-  <ul id="dropdown1" class="dropdown-content">
+ <ul id="dropdown1" class="dropdown-content">
     <li><a class="black-text" href="/">Home</a></li>
     <li><a class="black-text" href="/menu">Menu</a></li>
     <li><a class="black-text" href="/reservation">Reservation</a></li>
@@ -17,9 +8,9 @@
   <nav class="black" role="navigation">
     <a href="#" data-target="nav-mobile" class="sidenav-trigger white-text"><i class="material-icons">menu</i></a>
     <div class="nav-wrapper container">
-      <div class="nav-wrapper">
+      <div id="loggedIn" class="nav-wrapper">
         
-        <a  href="#modal1" class="brand-logo modal-trigger">Sign In <i class="fas fa-user"></i></a>
+        <a  href="#modal1" class="brand-logo modal-trigger">Sign In<i class="fas fa-user"></i></a>
         <a href="/" class="brand-logo center">[HungARRAY]</a>
         <ul class="right hide-on-med-and-down">
           
@@ -28,9 +19,20 @@
         </ul>
       </div>
     </div>      
-
     </div>
   </nav>
+  {{#if errorPassword}}
+    <div id="errorPassword">{{errorPassword}}</div>
+  {{/if}}
+  {{#if errorEmail}}
+    <div id="errorEmail">{{errorEmail}}</div>
+  {{/if}}
+  {{#if errorUnknown}}
+    <div id="errorUnknown">{{errorUnknown}}</div>
+  {{/if}}
+  {{#if user}}
+    <div id="errorUnknown">hello {{user}}</div>
+  {{/if}}
 
 
       <ul id="nav-mobile" class="sidenav">
@@ -209,7 +211,7 @@
                             </div>
                     <a href="signup">Register</a>
                     </div>
-                        <input class="btn waves-effect waves-light" type="submit" value="Sign In"/>
+                        <input id="signin" class="btn waves-effect waves-light" type="submit" value="Sign In"/>
                 </form>
                 </div>
             </div>
@@ -220,7 +222,10 @@
   </footer>
 
 <script>        
-  $(document).ready(function(){
+  $(document).ready(function() {
     $('.modal').modal();
+  if (loggedIn === true) {
+    $("#loggedIn").text("<a href='./logout'>Log Out</a>");
+  }
   });
 </script>

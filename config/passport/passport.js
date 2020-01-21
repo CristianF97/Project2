@@ -33,7 +33,7 @@ module.exports = function(passport, user) {
                         };
                         User.create(data).then(function(newUser, created) {
                             if (!newUser) {
-                                return done(null, falsereq.flash("emailInuse", "That email is already in use"));
+                                return done(null, false, req.flash("emailInuse", "That email is already in use"));
                             }
                             if (newUser) {
                                 return done(null, newUser);
@@ -50,6 +50,7 @@ module.exports = function(passport, user) {
             User.findByPk(id).then(function(user) {
                 if (user) {
                     done(null, user.get());
+                    loggedIn = true;
                 } else {
                     done(user.errors, null);
                 };

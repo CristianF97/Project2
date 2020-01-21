@@ -6,6 +6,7 @@
    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   <link rel="stylesheet" href="../public/css/style.css"
    
     <title></title>
 </head>
@@ -23,7 +24,7 @@
     <a href="#" data-target="nav-mobile" class="sidenav-trigger white-text"><i class="material-icons">menu</i></a>
     <div class="nav-wrapper container">
       <div class="nav-wrapper">
-        <a  href="#!" class="brand-logo"><i class="fas fa-user"></i></a>
+        <a id="logout" class="btn black white-text waves-effect waves-purple" href="./logout">Log out</a>
         <a href="/" class="brand-logo center">[HungARRAY]</a>
         <ul class="right hide-on-med-and-down">
           
@@ -31,7 +32,7 @@
           <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Nav Link<i class="material-icons right">arrow_drop_down</i></a></li>
         </ul>
       </div>
-    </div>      
+    </div>
 
     </div>
   </nav>
@@ -49,6 +50,8 @@
     <div class="header">
         <h2>Place Your Order Here!</h2>
     </div>
+        <br>
+        <br>
     <table class="highlight centered">
         <thead>
           <tr>
@@ -73,7 +76,7 @@
                     </select>
                 </td class="input-field col s2">
                 <td>
-                    <button class="btn" id="addChowder">Add</button>
+                    <button class="btn black white-text waves-effect waves-purple" id="addChowder">Add</button>
                 </td>
             </tr><tr>
                 <td class= "input-field col s1">$7</td>
@@ -89,7 +92,7 @@
                     </select>
                 </td class="input-field col s2">
                 <td>
-                    <button class="btn" id="addBisque">Add</button>
+                    <button class="btn black white-text waves-effect waves-purple" id="addBisque">Add</button>
                 </td>
             </tr>
             <tr>
@@ -106,7 +109,7 @@
                     </select>
                 </td class="input-field col s2">
                 <td>
-                    <button class="btn" id="addOysters">Add</button>
+                    <button class="btn black white-text waves-effect waves-purple" id="addOysters">Add</button>
                 </td>
             </tr>
             <tr>
@@ -123,7 +126,7 @@
                     </select>
                 </td class="input-field col s2">
                 <td>
-                    <button class="btn" id="addFeet">Add</button>
+                    <button class="btn black white-text waves-effect waves-purple" id="addFeet">Add</button>
                 </td>
             </tr>
             <tr>
@@ -140,7 +143,7 @@
                     </select>
                 </td class="input-field col s2">
                 <td>
-                    <button class="btn" id="addCb">Add</button>
+                    <button class="btn black white-text waves-effect waves-purple" id="addCb">Add</button>
                 </td>
             </tr>
             <tr>
@@ -157,7 +160,7 @@
                     </select>
                 </td class="input-field col s2">
                 <td>
-                    <button class="btn" id="addBrisket">Add</button>
+                    <button class="btn black white-text waves-effect waves-purple" id="addBrisket">Add</button>
                 </td>
             </tr>
             <tr>
@@ -174,7 +177,7 @@
                     </select>
                 </td class="input-field col s2">
                 <td>
-                    <button class="btn" id="addBison">Add</button>
+                    <button class="btn black white-text waves-effect waves-purple" id="addBison">Add</button>
                 </td>
             </tr>
             <tr>
@@ -191,7 +194,7 @@
                     </select>
                 </td class="input-field col s2">
                 <td>
-                    <button class="btn" id="addVenison">Add</button>
+                    <button class="btn black white-text waves-effect waves-purple" id="addVenison">Add</button>
                 </td>
             </tr>
             <tr>
@@ -208,7 +211,7 @@
                     </select>
                 </td class="input-field col s2">
                 <td>
-                    <button class="btn" id="addTrout">Add</button>
+                    <button class="btn black white-text waves-effect waves-purple" id="addTrout">Add</button>
                 </td>
             </tr>
             <tr>
@@ -225,7 +228,7 @@
                     </select>
                 </td class="input-field col s2">
                 <td>
-                    <button class="btn" id="addMackerel">Add</button>
+                    <button class="btn black white-text waves-effect waves-purple" id="addMackerel">Add</button>
                 </td>
             </tr>
             <tr>
@@ -242,7 +245,7 @@
                     </select>
                 </td class="input-field col s2">
                 <td>
-                    <button class="btn" id="addPie">Add</button>
+                    <button class="btn black white-text waves-effect waves-purple" id="addPie">Add</button>
                 </td>
             </tr>
             <tr>
@@ -259,83 +262,260 @@
                     </select>
                 </td class="input-field col s2">
                 <td>
-                    <button class="btn" id="addClub">Add</button>
+                    <button class="btn black white-text waves-effect waves-purple" id="addClub">Add</button>
                 </td>
             </tr>
         </tbody>
         </table>
-        <div>
-            <h5 id="total">Total: $</h5>
-        </div>
 </div>
+<footer class="page-footer grey lighten-1">
+          <div class="container black-text">
+              <table>
+                  <thead>
+                      <th>Price</th>
+                      <th>Item</th>
+                      <th>Quantity</th>
+                  </thead>
+                  <tbody id="items">
+                  </tbody>
+              </table>
+              <p id="total">Total: $ </p>
+              <p id="tax">+ Sales Tax (6%): $ </p>
+              <hr>
+              <div>
+                  <h5 id="grandTotal">Grand Total: $ </h5>
+                  <button id="checkout" class="btn black white-text waves-effect waves-purple modal-trigger" href="#checkoutModal">Checkout</button>
+                  <br>
+              </div>
+          </div>
+        </footer>
+
+        <div id="checkoutModal" class="modal">
+            <div class="modal-content">
+                <h4>Checkout</h4>
+                <div class="container black-text">
+                    <p id="total2">Total: $ </p>
+                    <p id="tax2">+ Sales Tax (6%): $ </p>
+                    <hr>
+                    <div>
+                    <h5 id="grandTotal2">Grand Total: $ </h5>
+                  <br>
+              </div>
+          </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">I'm not paying for that</a>
+            </div>
+        </div>
 </body>
 <script type="text/javascript">
 
 
 function calcTotal() {
     var total = 0;
+    var tax = 0;
+    var grandTotal = 0;
+
+function updateCheckout() {
+    $("#total2").text("Total: $ " + total);
+    $("#tax2").text("+ Sales Tax (6%): $ " + tax.toFixed(2));
+    $("#grandTotal2").text("Grand Total: $ " + grandTotal.toFixed(2));
+}
+    
 
     $("#total").text("Total: $ " + total);
 
     $("#addChowder").on("click", function() {
         event.preventDefault();
-        total += $("#clamChowder").val() * 7;
-        $("#total").text("Total: $ " + total);
+        let quantity = $("#clamChowder").val();
+        if (quantity === null) {
+            return false;
+        } else {
+            total += $("#clamChowder").val() * 7;
+            $("#total").text("Total: $ " + total);
+            tax = total * .06;
+            $("#tax").text("+ Sales Tax (6%): $ " + tax.toFixed(2));
+            grandTotal = total * 1.06;
+            $("#grandTotal").text("Grand Total: $ " + grandTotal.toFixed(2));
+            $("#items").append("<tr><td>$7</td><td>Clam Chowder</td><td>" + quantity + "</td></tr><br>");
+            updateCheckout();
+        };
     });
     $("#addBisque").on("click", function() {
         event.preventDefault();
-        total += $("#lobsterBisque").val() * 7;
-        $("#total").text("Total: $ " + total);
+        let quantity2 = $("#lobsterBisque").val();
+        if (quantity2 === null) {
+            return false;
+        } else {
+            total += $("#lobsterBisque").val() * 7;
+            $("#total").text("Total: $ " + total);
+            tax = total * .06;
+            $("#tax").text("+ Sales Tax (6%): $ " + tax.toFixed(2));
+            grandTotal = total * 1.06;
+            $("#grandTotal").text("Grand Total: $ " + grandTotal.toFixed(2));
+            $("#items").append("<tr><td>$7</td><td>Lobster Bisque</td><td>" + quantity2 + "</td></tr><br>");
+            updateCheckout();
+        }
     });
     $("#addOysters").on("click", function() {
         event.preventDefault();
-        total += $("#wfOysters").val() * 15;
-        $("#total").text("Total: $ " + total);
+        let quantity3 = $("#wfOysters").val();
+        if (quantity3 === null) {
+            return false;
+        } else {
+            total += $("#wfOysters").val() * 15;
+            $("#total").text("Total: $ " + total);
+            tax = total * .06;
+            $("#tax").text("+ Sales Tax (6%): $ " + tax.toFixed(2));
+            grandTotal = total * 1.06;
+            $("#grandTotal").text("Grand Total: $ " + grandTotal.toFixed(2));
+            $("#items").append("<tr><td>$15</td><td>Wood Fired Oysters</td><td>" + quantity3 + "</td></tr><br>");
+            updateCheckout();
+        }
     });
     $("#addFeet").on("click", function() {
         event.preventDefault();
+        let quantity4 = $("#ppFeet").val();
+        if (quantity4 === null) {
+            return false;
+        } else {
         total += $("#ppFeet").val() * 11;
-        $("#total").text("Total: $ " + total);
+            $("#total").text("Total: $ " + total);
+            tax = total * .06;
+            $("#tax").text("+ Sales Tax (6%): $ " + tax.toFixed(2));
+            grandTotal = total * 1.06;
+            $("#grandTotal").text("Grand Total: $ " + grandTotal.toFixed(2));
+            $("#items").append("<tr><td>$11</td><td>Pickled Pigs Feet</td><td>" + quantity4 + "</td></tr><br>");
+            updateCheckout();
+        };
     });
     $("#addCb").on("click", function() {
         event.preventDefault();
-        total += $("#cbSandwich").val() * 11;
-        $("#total").text("Total: $ " + total);
+        let quantity5 = $("#cbSandwich").val();
+        if (quantity5 === null) {
+            return false;
+        } else {
+            total += $("#cbSandwich").val() * 11;
+            $("#total").text("Total: $ " + total);
+            tax = total * .06;
+            $("#tax").text("+ Sales Tax (6%): $ " + tax.toFixed(2));
+            grandTotal = total * 1.06;
+            $("#grandTotal").text("Grand Total: $ " + grandTotal.toFixed(2));
+            $("#items").append("<tr><td>$11</td><td>Corned Beef Sandwich</td><td>" + quantity5 + "</td></tr><br>");
+            updateCheckout();
+        };
     });
     $("#addBrisket").on("click", function() {
         event.preventDefault();
-        total += $("#brisketSandwich").val() * 13;
-        $("#total").text("Total: $ " + total);
+        let quantity6 = $("#brisketSandwich").val();
+        if (quantity6 === null) {
+            return false;
+        } else {
+            total += $("#brisketSandwich").val() * 13;
+            $("#total").text("Total: $ " + total);
+            tax = total * .06;
+            $("#tax").text("+ Sales Tax (6%): $ " + tax.toFixed(2));
+            grandTotal = total * 1.06;
+            $("#grandTotal").text("Grand Total: $ " + grandTotal.toFixed(2));
+            $("#items").append("<tr><td>$13</td><td>Brisket Sandwich</td><td>" + quantity6 + "</td></tr><br>");
+            updateCheckout();
+        };
     });
     $("#addBison").on("click", function() {
         event.preventDefault();
-        total += $("#bisonBurger").val() * 11;
-        $("#total").text("Total: $ " + total);
+        let quantity7 = $("#bisonBurger").val();
+        if (quantity7 === null) {
+            return false;
+        } else {
+            total += $("#bisonBurger").val() * 11;
+            $("#total").text("Total: $ " + total);
+            tax = total * .06;
+            $("#tax").text("+ Sales Tax (6%): $ " + tax.toFixed(2));
+            grandTotal = total * 1.06;
+            $("#grandTotal").text("Grand Total: $ " + grandTotal.toFixed(2));
+            $("#items").append("<tr><td>$11</td><td>Bison Burger</td><td>" + quantity7 + "</td></tr><br>");
+            updateCheckout();
+        };
     });
     $("#addVenison").on("click", function() {
         event.preventDefault();
-        total += $("#venisonBurger").val() * 13;
-        $("#total").text("Total: $ " + total);
+        let quantity8 = $("#venisonBurger").val();
+        if (quantity8 === null) {
+            return false;
+        } else {
+            total += $("#venisonBurger").val() * 13;
+            $("#total").text("Total: $ " + total);
+            tax = total * .06;
+            $("#tax").text("+ Sales Tax (6%): $ " + tax.toFixed(2));
+            grandTotal = total * 1.06;
+            $("#grandTotal").text("Grand Total: $ " + grandTotal.toFixed(2));
+            $("#items").append("<tr><td>$7</td><td>Venison Burger</td><td>" + quantity8 + "</td></tr><br>");
+            updateCheckout();
+        };
     });
     $("#addTrout").on("click", function() {
         event.preventDefault();
-        total += $("#smokedTrout").val() * 11;
-        $("#total").text("Total: $ " + total);
+        let quantity9 = $("#smokedTrout").val();
+        if (quantity9 === null) {
+            return false;
+        } else {
+            total += $("#smokedTrout").val() * 11;
+            $("#total").text("Total: $ " + total);
+            tax = total * .06;
+            $("#tax").text("+ Sales Tax (6%): $ " + tax.toFixed(2));
+            grandTotal = total * 1.06;
+            $("#grandTotal").text("Grand Total: $ " + grandTotal.toFixed(2));
+            $("#items").append("<tr><td>$11</td><td>Smoked Trout</td><td>" + quantity9 + "</td></tr><br>");
+            updateCheckout();
+        };
     });
     $("#addMackerel").on("click", function() {
         event.preventDefault();
-        total += $("#grilledMackerel").val() * 12;
-        $("#total").text("Total: $ " + total);
+        let quantity10 = $("#grilledMackerel").val();
+        if (quantity10 === null) {
+            return false;
+        } else {
+            total += $("#grilledMackerel").val() * 12;
+            $("#total").text("Total: $ " + total);
+            tax = total * .06;
+            $("#tax").text("+ Sales Tax (6%): $ " + tax.toFixed(2));
+            grandTotal = total * 1.06;
+            $("#grandTotal").text("Grand Total: $ " + grandTotal.toFixed(2));
+            $("#items").append("<tr><td>$12</td><td>Grilled Mackerel</td><td>" + quantity10 + "</td></tr><br>");
+            updateCheckout();
+        };
     });
     $("#addPie").on("click", function() {
         event.preventDefault();
-        total += $("#cpPie").val() * 10;
-        $("#total").text("Total: $ " + total);
+        let quantity11 = $("#cpPie").val();
+        if (quantity11 === null) {
+            return false;
+        } else {
+            total += $("#cpPie").val() * 10;
+            $("#total").text("Total: $ " + total);
+            tax = total * .06;
+            $("#tax").text("+ Sales Tax (6%): $ " + tax.toFixed(2));
+            grandTotal = total * 1.06;
+            $("#grandTotal").text("Grand Total: $ " + grandTotal.toFixed(2));
+            $("#items").append("<tr><td>$10</td><td>Chicken Pot Pie</td><td>" + quantity11 + "</td></tr><br>");
+            updateCheckout();
+        };
     });
     $("#addClub").on("click", function() {
         event.preventDefault();
-        total += $("#wtClub").val() * 11;
-        $("#total").text("Total: $ " + total);
+        let quantity12 = $("#wtClub").val();
+        if (quantity12 === null) {
+            return false;
+        } else {
+            total += $("#wtClub").val() * 11;
+            $("#total").text("Total: $ " + total);
+            tax = total * .06;
+            $("#tax").text("+ Sales Tax (6%): $ " + tax.toFixed(2));
+            grandTotal = total * 1.06;
+            $("#grandTotal").text("Grand Total: $ " + grandTotal.toFixed(2));
+            $("#items").append("<tr><td>$11</td><td>Wild Turkey Club</td><td>" + quantity12 + "</td></tr><br>");
+            updateCheckout();
+        };
     });
 };
 calcTotal();
